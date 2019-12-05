@@ -44,6 +44,7 @@ public class MainActivity extends BaseVMActivity {
                 startAct(SimpleLiveDataActivity.class);
                 break;
             case R.id.btn_vm_ld:
+                
                 break;
             case R.id.btn_lifecycle:
                 startAct(LifecycleActivity.class);

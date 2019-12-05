@@ -1,33 +1,30 @@
 package com.chlhrssj.demo.ui.lifecycle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
 import com.chlhrssj.demo.R;
 import com.chlhrssj.demo.base.BaseVMActivity;
 
-public class LifecycleActivity extends BaseVMActivity {
+public class LifecycleActivity extends AppCompatActivity {
 
     LifeObserver lifeObserver;
     NoLifeObserver noLifeObserver;
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_lifecycle;
-    }
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    @Override
-    protected void initView() {
+        setContentView(R.layout.activity_lifecycle);
+
+
         lifeObserver = new LifeObserver();
         getLifecycle().addObserver(lifeObserver);
 
         noLifeObserver = new NoLifeObserver();
-    }
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         noLifeObserver.onCreate();
     }
 

@@ -9,10 +9,18 @@ import com.squareup.leakcanary.LeakCanary;
  */
 public class MyApplication extends Application {
 
+    static MyApplication myApplication;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        myApplication = this;
+
         LeakCanary.install(this);
+    }
+
+    public static MyApplication getInstance() {
+        return myApplication;
     }
 }

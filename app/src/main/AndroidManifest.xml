@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.livedata.SimpleLiveDataActivity"></activity>
+        <activity android:name=".ui.mvvm.home.HomeActivity"></activity>
+        <activity android:name=".ui.livedata.SimpleLiveDataActivity" />
         <activity android:name=".ui.livedata.NoLiveDataActivity" />
         <activity android:name=".ui.viewmodel.SimpleVMActivity" />
         <activity android:name=".ui.viewmodel.NoVMActivity" />
