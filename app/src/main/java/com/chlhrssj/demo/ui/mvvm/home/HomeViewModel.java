@@ -7,4 +7,6 @@ import com.chlhrssj.demo.base.BaseViewModel;
  */
 public class HomeViewModel extends BaseViewModel {
 
+    
+
 }

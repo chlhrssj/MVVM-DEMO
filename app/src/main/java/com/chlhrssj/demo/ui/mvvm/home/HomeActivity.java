@@ -8,7 +8,7 @@ import com.chlhrssj.demo.R;
 import com.chlhrssj.demo.base.BaseVMActivity;
 import com.chlhrssj.demo.base.BaseViewModel;
 
-public class HomeActivity<HomeViewModel> extends BaseVMActivity {
+public class HomeActivity extends BaseVMActivity<HomeViewModel> {
 
     @Override
     protected int getLayoutId() {
