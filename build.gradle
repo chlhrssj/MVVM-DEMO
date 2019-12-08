@@ -19,6 +19,9 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
+        maven { url "https://clojars.org/repo/" } //icepick配置
+        maven { url "https://jitpack.io" }
+        maven { url "https://dl.bintray.com/relish-wang/maven/" } // 添加这行
     }
 }
 

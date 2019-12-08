@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Create by rssj on 2019-12-08
  */
-public class HomeList extends BaseBean<HomeList.DataBean> {
+public class HomeListBean extends BaseBean<HomeListBean.DataBean> {
 
     public static class DataBean {
         /**

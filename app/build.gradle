@@ -53,4 +53,10 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    //recyclerview adapter
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }

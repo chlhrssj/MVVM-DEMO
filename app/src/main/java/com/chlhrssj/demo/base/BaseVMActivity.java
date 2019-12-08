@@ -57,12 +57,16 @@ public abstract class BaseVMActivity<T extends BaseViewModel> extends AppCompatA
             switch (baseEvent.getWhat()) {
                 case BaseViewModel.NORMAL:
                     showNormal();
+                    break;
                 case BaseViewModel.LOADING:
                     showLoading();
+                    break;
                 case BaseViewModel.EMPTY:
                     showEmptyView();
+                    break;
                 case BaseViewModel.ERROR: {
                     showError();
+                    break;
                 }
             }
         });
