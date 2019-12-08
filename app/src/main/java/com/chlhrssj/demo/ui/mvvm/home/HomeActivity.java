@@ -1,5 +1,6 @@
 package com.chlhrssj.demo.ui.mvvm.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chlhrssj.demo.R;
 import com.chlhrssj.demo.base.BaseVMActivity;
 import com.chlhrssj.demo.bean.HomeListBean;
+import com.chlhrssj.demo.ui.mvvm.detail.WebActivity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -44,11 +46,11 @@ public class HomeActivity extends BaseVMActivity<HomeViewModel> {
     protected void initView() {
 
         homeAdapter = new HomeAdapter(list);
-        homeAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                HomeListBean.DataBean.DatasBean datasBean = homeAdapter.getData().get(position);
-            }
+        homeAdapter.setOnItemClickListener((adapter, view, position) -> {
+            HomeListBean.DataBean.DatasBean datasBean = homeAdapter.getData().get(position);
+            Intent intent = new Intent(HomeActivity.this, WebActivity.class);
+            intent.putExtra("URL", datasBean.getLink());
+            startActivity(intent);
         });
         recycler.setAdapter(homeAdapter);
         recycler.setLayoutManager(new LinearLayoutManager(this));
