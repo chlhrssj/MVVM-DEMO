@@ -6,10 +6,11 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.chlhrssj.demo.base.inter.IView;
+import com.chlhrssj.demo.util.GenericsUtils;
+import com.chlhrssj.demo.util.TUtil;
 import com.chlhrssj.demo.util.ToastUtils;
 
 import java.lang.reflect.ParameterizedType;
@@ -34,7 +35,7 @@ public abstract class BaseVMActivity<T extends BaseViewModel> extends AppCompatA
         unBinder = ButterKnife.bind(this);
         mActivity = this ;
 
-        mViewModel = new ViewModelProvider(this).get(getTClass());
+        mViewModel = new ViewModelProvider(this).get((Class<T>) TUtil.getInstance(this, 0));
 
         initView();
         initVM();
@@ -52,7 +53,7 @@ public abstract class BaseVMActivity<T extends BaseViewModel> extends AppCompatA
             }
         });
 
-        mViewModel.getLoadLiveData().observe(this, baseEvent -> {
+        mViewModel.getLoadState().observe(this, baseEvent -> {
             switch (baseEvent.getWhat()) {
                 case BaseViewModel.NORMAL:
                     showNormal();
@@ -66,10 +67,6 @@ public abstract class BaseVMActivity<T extends BaseViewModel> extends AppCompatA
             }
         });
 
-    }
-
-    public Class<T> getTClass() {
-        return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
 
     protected void startAct(Class c) {

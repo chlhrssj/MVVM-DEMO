@@ -5,9 +5,11 @@ import android.view.View;
 
 import com.chlhrssj.demo.R;
 import com.chlhrssj.demo.base.BaseVMActivity;
+import com.chlhrssj.demo.base.BaseViewModel;
 import com.chlhrssj.demo.ui.lifecycle.LifecycleActivity;
 import com.chlhrssj.demo.ui.livedata.NoLiveDataActivity;
 import com.chlhrssj.demo.ui.livedata.SimpleLiveDataActivity;
+import com.chlhrssj.demo.ui.mvvm.home.HomeActivity;
 import com.chlhrssj.demo.ui.viewmodel.NoVMActivity;
 import com.chlhrssj.demo.ui.viewmodel.SimpleVMActivity;
 import com.chlhrssj.demo.ui.viewmodel.SimpleViewModel;
@@ -15,7 +17,7 @@ import com.chlhrssj.demo.ui.viewmodel.SimpleViewModel;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseVMActivity {
+public class MainActivity extends BaseVMActivity<BaseViewModel> {
 
     @Override
     protected int getLayoutId() {
@@ -44,7 +46,7 @@ public class MainActivity extends BaseVMActivity {
                 startAct(SimpleLiveDataActivity.class);
                 break;
             case R.id.btn_vm_ld:
-                
+                startAct(HomeActivity.class);
                 break;
             case R.id.btn_lifecycle:
                 startAct(LifecycleActivity.class);

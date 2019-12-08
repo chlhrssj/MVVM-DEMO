@@ -10,7 +10,7 @@ package com.chlhrssj.demo.http;
 public class BaseHost {
 
 
-    public static final String BaseUrl = "https://www.wanandroid.com";
+    public static final String BaseUrl = "https://www.wanandroid.com/";
 
     public static final int DEFAULTURL = 0;
 
